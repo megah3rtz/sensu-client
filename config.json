@@ -1,0 +1,9 @@
+{
+  "rabbitmq": {
+    "host": "SENSU_SERVER",
+    "port": 5671,
+    "vhost": "/sensu",
+    "user": "SENSU_USER",
+    "password": "SENSU_PASSWORD"
+  }
+}
