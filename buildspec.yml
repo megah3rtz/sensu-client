@@ -3,10 +3,18 @@
 version: 0.2
 
 phases:
+
+  pre_build:
+    commands:
+      - echo $PASSWORD | docker login --username megah3rtz --password-stdin
   build:
     commands:
-      - . $CODEBUILD_SRC_DIR/metadata.txt
+      - IMAGE_VERSION=$(cat $CODEBUILD_SRC_DIR/metadata.txt)
+      - IMAGE_REPO_NAME=sensu-client
       - echo Build started on `date`
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_VERSION .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_VERSION megah3rtz/$IMAGE_REPO_NAME:$IMAGE_VERSION
 
+  post_build:
+    commands:
+      - docker push megah3rtz/$IMAGE_REPO_NAME:$IMAGE_VERSION
