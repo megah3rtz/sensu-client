@@ -1,2 +1,1 @@
-IMAGE_REPO_NAME="sensu-client"
-IMAGE_VERSION="1.0"
+3.0
