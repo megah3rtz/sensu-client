@@ -6,7 +6,7 @@ phases:
 
   pre_build:
     commands:
-      - docker login --username megah3rtz --password $PASSWORD
+      - echo $PASSWORD | docker login --username megah3rtz --password-stdin
   build:
     commands:
       - . $CODEBUILD_SRC_DIR/metadata.txt
