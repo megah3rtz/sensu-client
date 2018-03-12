@@ -1,0 +1,11 @@
+---
+
+version: 0.2
+
+phases:
+  build:
+    commands:
+      echo Build started on `date`
+      docker build -t $IMAGE_REPO_NAME:$IMAGE:TAG .
+      docker tag $IMAGE_REPO_NAME:$IMAGE_TAG megah3rtz/$IMAGE_REPO_NAME:$IMAGE_TAG
+
