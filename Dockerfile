@@ -17,7 +17,7 @@ ADD cert.pem /etc/sensu/ssl/cert.pem
 # PEM files are from https://github.com/hiroakis/docker-sensu-server - THESE ARE NOT SECURE!
 ADD config.json /tmp/config.json
 ADD client.json /tmp/client.json
-ADD check_disk.json /tmp/check_disk.json
+ADD check_http.json /tmp/check_http.json
 
 
 ADD run-sensu-client.sh /opt/run-sensu-client.sh
