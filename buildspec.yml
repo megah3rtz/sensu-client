@@ -18,3 +18,4 @@ phases:
   post_build:
     commands:
       - docker push $USERNAME/$IMAGE_REPO_NAME:$IMAGE_VERSION
+      - docker push $USERNAME/$IMAGE_REPO_NAME:latest
