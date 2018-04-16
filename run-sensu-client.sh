@@ -14,8 +14,8 @@ cat /tmp/client.json \
 	| sed s/CLIENT_NAME/${CLIENT_NAME}/g \
 	| sed s/CLIENT_IP_ADDRESS/${CLIENT_IP_ADDRESS}/g > /etc/sensu/conf.d/client.json
 
-cat /tmp/check_disk.json \
+cat /tmp/check_http.json \
 | sed s/SERVICE_PORT/${SERVICE_PORT}/g \
-| sed s/SERVICE_NAME/${SERVICE_NAME}/g > /etc/sensu/conf.d/check_disk.json
+| sed s/SERVICE_NAME/${SERVICE_NAME}/g > /etc/sensu/conf.d/check_http.json
 
 /opt/sensu/bin/sensu-client
